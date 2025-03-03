@@ -4,7 +4,7 @@ type GeoMetadata = {
 }
 
 export type WeatherData = {
-    feels_like: number | undefined;
+    feelsLike: number | undefined;
     humidity: number | undefined;
     pressure: number | undefined;
     temp: number | undefined;
@@ -41,7 +41,7 @@ async function handle_weather_request(city: string, API_key: string, input_clear
         const weather_endpoint = `https://api.openweathermap.org/data/2.5/weather?lat=${data[0].lat}&lon=${data[0].lon}&appid=${API_key}&units=metric`;
         const weather_data = await (await fetch(weather_endpoint)).json();
         const weather_result: WeatherData = {
-            feels_like: weather_data.main.feels_like,
+            feelsLike: weather_data.main.feelsLike,
             humidity: weather_data.main.humidity,
             pressure: weather_data.main.pressure,
             temp: weather_data.main.temp,

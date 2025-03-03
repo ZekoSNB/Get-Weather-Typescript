@@ -4,18 +4,17 @@ import { WeatherData } from '../API';
 // Define the props interface
 interface WeatherProps extends WeatherData {}
 
-function Weather({ feels_like, humidity, pressure, temp, weather, icon, city}: WeatherProps) {
+function Weather({ feelsLike, humidity, pressure, temp, weather, icon, city}: WeatherProps) {
     const icon_url = `https://openweathermap.org/img/wn/${icon}@2x.png`
     if (icon === undefined) return (<></>);
     return (
         // Display weather data
-        // <div className="Todo">
         <Grid templateColumns="repeat(2, 1fr)" gap="4">
             <GridItem>
                 <Text>Temperature: {temp ? Math.round(temp) : null}°C</Text>
             </GridItem>
             <GridItem>
-                <Text>Feels like: {feels_like ? Math.round(feels_like) : null}°C</Text>
+                <Text>Feels like: {feelsLike ? Math.round(feelsLike) : null}°C</Text>
             </GridItem>
             <GridItem>
                 <Text>Humidity: {humidity ? Math.round(humidity) : null}%</Text>
