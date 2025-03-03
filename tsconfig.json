@@ -6,15 +6,18 @@
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "skipLibCheck": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "allowJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
